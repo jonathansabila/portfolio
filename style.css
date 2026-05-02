@@ -1,27 +1,103 @@
 /*CSS FOR WEB DESIGN*/
-*{/*reset muna dito yong laman bago tayo mag design (*= EVERYTHING)*/
-    margin: 0;
+/*reset muna dito yong laman bago tayo mag design (*= EVERYTHING)*/
+ *{margin: 0;
     padding : 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
     outline: none;
-
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     list-style: none;
-
-    font-family: -apple-system, sans-serif;
-
-
-    font-family: 'Poppins';
-    scroll-behavior: smooth;
-    list-style: none;
-
-    font-family: -apple-system, sans-serif;
-
+  
+}/*my header design start here*/
+.header{
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: (blur10px);
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 3rem;
+    z-index: 1000;
+}
+.logo{
+    font-size:1.3rem;
+    font-weight: 600;
+    color: white;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
 
 }
+/* Tech Stack Section */
+.tech-stack {
+  padding: 60px 20px;
+  background: var(--second-bg-color); /* same background as your site */
+  color: var(--text-color);           /* consistent text color */
+  text-align: center;
+}
+
+.tech-stack .heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.tech-stack .heading span {
+  color: var(--main-color); /* accent matches your theme */
+}
+
+/* Container layout */
+.stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Each stack item */
+.stack-item {
+  background: var(--bg-color); /* same card background as other sections */
+  border-radius: 12px;
+  padding: 20px;
+  width: 140px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.stack-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.stack-item p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Hover effects */
+.stack-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px var(--main-color);
+}
+
+.stack-item:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--main-color));
+}
+
 .container {
     position: fixed;   /* stays in place as background */
     top: 0;
@@ -127,13 +203,16 @@
     animation-delay: 1s;
     background-color: #4c6009;
 }
-.container::after{/*ito ang sodo element pang over lay*/
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(200px);/*gamit to tago natin yong box */
+.container::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.3); /* semi-transparent */
+  backdrop-filter: blur(200px);
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
 }
+
 
 :root{/*GREAT FOR VARIABLES*/
     --bg-color: #fff;
@@ -158,19 +237,7 @@ select{/*DROPDOWN MENUS*/
 
  /*Header Section Start*/
 
- .header{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    padding: 2rem 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    transform: all 0.5s ease;
- }
+
  .logo{
     font-size: 3rem;
     font-weight: 700;

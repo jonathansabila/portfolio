@@ -7,6 +7,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--use of this. mag DL lang tayo ng icon tapos ito gagamitin natin-->
     <link rel="stylesheet" href="style.css">
     <title>Jonathan Sabila - Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
     <!--<a> anchr tag hyperlink -->
     <!--<ul> unordertag bullet like <li>-->
@@ -27,12 +30,13 @@
     <header class="header">
         <a href="#home" class="logo"> Jonathan Sabila ®</a><!--tittle or logo left side madalas toh. -->
         <i class='bx bx-menu' id="menu-icon"></i>
-
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#tech-stack">Tech Stack</a>
-        </nav>
+<ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
+            <li><a href="#certificate">Certificate</a></li>
+        </ul>
+    
     </header>
 
     <!--Home Section Start-->
@@ -50,17 +54,15 @@
             <p>let me introduce myself and my skills. Let's get started and enjoy the journey!</p>
        
         <div class="social-media">
-            <a href="#"><i class='bx bxl-github'></i></a> <!--dito natin gagamitin yung boxicon na idownload natin. -->
-            <a href="#"><i class='bx bxl-linkedin'></i></a>
-            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#" title="GitHub"><i class='bx bxl-github'></i></a> <!--dito natin gagamitin yung boxicon na idownload natin. -->
+            <a href="#" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a href="#" title="Instagram"><i class='bx bxl-instagram'></i></a>
         </div>
-        <a href="a" class="btn">Download</a>
+        <a href="a" class="btn">Download CV</a>
         </div>
     </selection>
     
     <!--About Section Start-->
-
-
     <section class="about" id="about">
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
@@ -70,13 +72,12 @@
             <a href="a" class="btn">Read More</a>
         </div>
         <div class="about-img">
-
-
             <img src="Asset/Image3.jpg" alt="About Image">
 
         </div>
 
     </section>
+
 
     <selection class="about" id="about">
         
@@ -88,6 +89,31 @@
             
             </selection>
     <!--LET start here-->
+    <!-- Tech Stack Section -->
+<section class="tech-stack" id="tech-stack">
+  <h2 class="heading">My <span>Tech Stack</span></h2>
+  <div class="stack-container">
+    <!-- Each stack item -->
+    <div class="stack-item">
+      <img src="Asset/html-logo.png" alt="HTML Logo">
+      <p>HTML</p>
+    </div>
+    <div class="stack-item">
+      <img src="Asset/css-logo.png" alt="CSS Logo">
+      <p>CSS</p>
+    </div>
+    <div class="stack-item">
+      <img src="Asset/js-logo.png" alt="JavaScript Logo">
+      <p>JavaScript</p>
+    </div>
+    <div class="stack-item">
+      <img src="Asset/git-logo.png" alt="Git Logo">
+      <p>Git</p>
+    </div>
+   
+  </div>
+</section>
+
 
 </body>
 </html>
