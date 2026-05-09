@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
+      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--use of this. mag DL lang tayo ng icon tapos ito gagamitin natin-->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-<body>
-        <script src="script.js"></script>
-        <!--Colorfull BG animation Section Start-->
-    <div class="container">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
     <header class="header">
   <a href="index.html" class="logo">Jonathan Sabila ®</a>
   <i class='bx bx-menu' id="menu-icon"></i>
@@ -26,6 +20,25 @@
     <li><a href="certification.html" class="active">Certificate</a></li>
   </ul>
 </header>
+<body>
+        <script src="script.js"></script>
+        <!--Colorfull BG animation Section Start-->
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+       <script>
+  let menuIcon = document.querySelector('#menu-icon');
+  let navbar = document.querySelector('.navbar');
+
+  menuIcon.onclick = () => {
+    navbar.classList.toggle('active');
+  };
+</script>
+ 
 
    <section class="certificates" id="certificates">
   <h2 class="heading">My <span>Certificates</span></h2>

@@ -15,18 +15,7 @@
     <!--<ul> unordertag bullet like <li>-->
     <!--<p> content words mo -->
     <!--<h> from h1-h6 subheading to... -->
-<body>
-
-    <script src="script.js"></script>
-        <!--Colorfull BG animation Section Start-->
-    <div class="container">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-   <!--Header Section Start-->
+         <!--Header Section Start-->
     <header class="header">
         <a href="index.html" class="logo"> Jonathan Sabila ®</a><!--tittle or logo left side madalas toh. -->
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -38,6 +27,34 @@
         </ul>
     
     </header>   
+<body>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="script.js"></script>
+        <!--Colorfull BG animation Section Start-->
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+<div id="nav-placeholder">
+
+</div>
+
+       <script>
+  let menuIcon = document.querySelector('#menu-icon');
+  let navbar = document.querySelector('.navbar');
+
+  menuIcon.onclick = () => {
+    navbar.classList.toggle('active');
+  };
+</script>
+
+
 
     <!--Home Section Start-->
     <selection class="home" id="home">
