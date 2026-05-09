@@ -4,9 +4,38 @@
      <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tech Stack</title>
+    <title></title>
 </head>
+<header class="header">
+  <a href="index.html" class="logo">Jonathan Sabila ®</a>
+  <i class='bx bx-menu' id="menu-icon"></i>
+  <ul class="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="tech-stack.html" class="active">Tech Stack</a></li>
+    <li><a href="certification.html">Certificate</a></li>
+  </ul>
+</header>
+
 <body>
+  <script src="script.js"></script>
+        <!--Colorfull BG animation Section Start-->
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+  <script>
+  let menuIcon = document.querySelector('#menu-icon');
+  let navbar = document.querySelector('.navbar');
+
+  menuIcon.onclick = () => {
+    navbar.classList.toggle('active');
+  };
+</script>
+
     <h1>My Tech Stack</h1>
       <!-- Tech Stack Section -->
 <section class="tech-stack" id="tech-stack">

@@ -30,14 +30,14 @@
     <header class="header">
         <a href="index.html" class="logo"> Jonathan Sabila ®</a><!--tittle or logo left side madalas toh. -->
         <i class='bx bx-menu' id="menu-icon"></i>
-<ul class="navbar">
+        <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="tech-stack.html">Tech Stack</a></li>
             <li><a href="certification.html">Certificate</a></li>
         </ul>
     
-    </header>
+    </header>   
 
     <!--Home Section Start-->
     <selection class="home" id="home">
@@ -84,10 +84,7 @@
             </div>
             
             </selection>
-    <!--LET start here-->
-<<<<<<< HEAD
-
-=======
+ 
     <!-- Tech Stack Section -->
 <section class="tech-stack" id="tech-stack">
   <h2 class="heading">My <span>Tech Stack</span></h2>
@@ -111,35 +108,54 @@
     </div>
   </div>
 </section>ection>
->>>>>>> 25b822d6db7f9c675daf8b91771bdc67e61e51ba
 
-    <!--Certificate Section Start-->
-    <section class="certificate" id="certificate">
-        <h2 class="heading">My <span>Certificate</span></h2>
-        <div class="certificate-container">
-            <div class="certificate-item">
-                <img src="Asset/JonathanSabila-IntroductionModernDBS.Certification.png" alt="Certificate Intrioduction to Modern Databases">
-                <p>Modern Databases - Saylor</p>
-                <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank">http://learn.saylor.org/admin/tool/certificate/index.php</a></p>
-            </div>    
-            <div class="certificate-item">
-                <img src="Asset/JonathanSabila-PythonEssential.Certification.png" alt="Certificate python essential">
-                <p>Python Essential Training - Cisco Academy</p>
-                <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank">http://learn.saylor.org/admin/tool/certificate/index.php</a></p> 
-            </div>
-            <div class="certificate-item">
-                <img src="Asset/JonathanSabila-NetworkingBasic.Certification.png" alt="Certificate networking basic">
-                <p>Networking Basics - Cisco Academy</p>
-                <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank">http://learn.saylor.org/admin/tool/certificate/index.php</a></p>
-            </div>
-           
-            <div class="certificate-item">
-                <img src="Asset/JonathanSabila-SoftwareEngineering.Certification.png" alt="Certificate software engineering">
-                <p>Software Engineering - Saylor</p>
-                <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank">http://learn.saylor.org/admin/tool/certificate/index.php</a></p> 
-            </div>
-        </div>
-    </section>
+
+<!--Certificate Section Start-->
+<section class="certificates" id="certificates">
+  <h2 class="heading">My <span>Certificates</span></h2>
+  <div class="certificates-container">
+    
+    <!-- Certificate Item -->
+    <div class="certificates-item">
+      <img src="Asset/JonathanSabila-IntroductionModernDBS.Certification.png" 
+           alt="Certificate Introduction to Modern Databases"
+           onclick="openModal('Asset/JonathanSabila-IntroductionModernDBS.Certification.png')">
+      <p>Modern Databases - Saylor</p>
+      <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener">Verify</a></p>
+    </div>
+
+    <div class="certificates-item">
+      <img src="Asset/JonathanSabila-PythonEssential.Certification.png" 
+           alt="Certificate Python Essential"
+           onclick="openModal('Asset/JonathanSabila-PythonEssential.Certification.png')">
+      <p>Python Essential Training - Cisco Academy</p>
+      <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener noreferrer">Verify</a></p>
+    </div>
+
+    <div class="certificates-item">
+      <img src="Asset/JonathanSabila-NetworkingBasic.Certification.png" 
+           alt="Certificate Networking Basics"
+           onclick="openModal('Asset/JonathanSabila-NetworkingBasic.Certification.png')">
+      <p>Networking Basics - Cisco Academy</p>
+      <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener noreferrer">Verify</a></p>
+    </div>
+
+    <div class="certificates-item">
+      <img src="Asset/JonathanSabila-SoftwareEngineering.Certification.png" 
+           alt="Certificate Software Engineering"
+           onclick="openModal('Asset/JonathanSabila-SoftwareEngineering.Certification.png')">
+      <p>Software Engineering - Saylor</p>
+      <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener noreferrer">Verify</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="certModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg" alt="Certificate Image">
+</div>
+
 
 
 </body>
