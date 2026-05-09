@@ -40,8 +40,9 @@
 </script>
  
 
-   <section class="certificates" id="certificates">
-   <h2 class="heading">My <span>Certificates</span></h2>
+<!--Certificate Section Start-->
+<section class="certificates" id="certificates">
+  <h2 class="heading">My <span>Certificates</span></h2>
   <div class="certificates-container">
     
     <!-- Certificate Item -->
@@ -74,7 +75,9 @@
            alt="Certificate Software Engineering"
            onclick="openModal('Asset/JonathanSabila-SoftwareEngineering.Certification.png')">
       <p>Software Engineering - Saylor</p>
-      <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener noreferrer">Verify</a></p>
+     <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" 
+      target="_blank" rel="noopener noreferrer">Verify</a></p>
+
     </div>
   </div>
 </section>
@@ -82,16 +85,10 @@
 <!-- Modal -->
 <div id="certModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
+  <img class="modal-content" id="modalImg" alt="Certificate Image">
 </div>
-<script>
-function openModal(imageSrc) {
-  document.getElementById('modalImg').src = imageSrc;
-  document.getElementById('certModal').style.display = 'block';
-}
 
-function closeModal() {
-  document.getElementById('certModal').style.display = 'none';
-}
-    </body>
-</html> 
+
+
+</body>
+</html>

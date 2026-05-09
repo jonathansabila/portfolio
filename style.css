@@ -477,6 +477,33 @@ span {
     box-shadow: 0 0 20px var(--main-color);
     transition: 0.3s ease;
 }
+.about.about-content{
+    max-width: 600px;
+    color: var(--text-color);
+}
+.about-content h2 {
+    font-size: 10 rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.about-content {
+    max-width: 600px;
+    color: var(--text-color);
+}
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.certificates-item p {
+  font-size: 1.2rem;   /* increase font size */
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 8px 0;
+}
 .certificates-container {
   display: flex;
   flex-wrap: wrap;
@@ -484,25 +511,27 @@ span {
   gap: 30px;
 }
 
+/* Default: two certificates per row */
 .certificates-item {
   background: var(--bg-color);
   border-radius: 12px;
   padding: 20px;
-  width: 140px;
+  width: calc(50% - 30px); /* two per row with gap */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   text-align: center;
 }
 
+/* Certificate image styling */
 .certificates-item img {
-  width: 80px;
-  height: 80px;
+  width: 500px;   /* make image bigger */
+  height: auto;   /* keep aspect ratio */
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
 
-
+/* Hover effects */
 .certificates-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px var(--main-color);
@@ -514,67 +543,37 @@ span {
 }
 
 .certificates-item p a {
-  color: var(--text-color);
+  background: var(--main-color);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
+  transition: background 0.3s ease;
 }
+
+.certificates-item p a:hover {
+  background: #333; /* darker hover */
+}
+
+
+/* Heading */
 .certificates .heading {
   font-size: 3rem;
   margin-bottom: 40px;
   font-weight: bold;
   color: var(--text-color);
-  justify-self: center;
+  text-align: center;
 }
+
 .certificates .heading span {
   color: var(--main-color);
 }
 
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+/* Responsive: one certificate per row on mobile */
+@media (max-width: 768px) {
+  .certificates-item {
+    width: 90%; /* occupy left and right sides */
+    margin: 0 auto;
+  }
 }
-
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 80vh;
-  border-radius: 12px;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.about-content {
-    max-width: 600px;
-    color: var(--text-color);
-}
-.about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: var(--text-color);
-}
-.about-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-color);
-}
-
-
