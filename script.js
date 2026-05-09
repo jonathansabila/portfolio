@@ -7,34 +7,28 @@ menuIcon.onclick = () => {
 };
 
 
-function openModal(imgSrc) {
-  document.getElementById("certModal").style.display = "block";
-  document.getElementById("modalImg").src = imgSrc;
-}
+const modal = document.getElementById("certificateModal");
+const modalImg = document.getElementById("modalImage");
+const modalCaption = document.getElementById("modalCaption");
+const closeBtn = document.getElementById("closeModal");
 
-function closeModal() {
-  document.getElementById("certModal").style.display = "none";
-}
-
-/* Optional: close modal with ESC key */
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
+// Attach click event to all certificate images
+document.querySelectorAll(".certificates-item img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";   // show modal
+    modalImg.src = img.src;         // set image
+    modalCaption.textContent = img.alt; // caption from alt text
+  });
 });
 
-function openModal(imageSrc) {
-  document.getElementById('modalImg').src = imageSrc;
-  document.getElementById('certModal').style.display = 'block';
-}
+let zoomed = false;
 
-function closeModal() {
-  document.getElementById('certModal').style.display = 'none';
-}
-
-tailwind.config = {
-  darkMode: 'class',
-  theme: {
-    extend: {}
+modalImg.addEventListener("click", () => {
+  if (!zoomed) {
+    modalImg.style.transform = "scale(1.5)";
+    zoomed = true;
+  } else {
+    modalImg.style.transform = "scale(1)";
+    zoomed = false;
   }
-}
+});

@@ -38,31 +38,7 @@ body {
   background-position: center;  /* keeps centered */
 }
 
-/*my header design start here*/
-.header{
-    position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: (blur10px);
-    color: white;
-    padding: 0.5rem 2rem;
-    border-radius: 3rem;
-    z-index: 1000;
-}
-.logo{
-    font-size:1.3rem;
-    font-weight: 600;
-    color: white;
-    text-wrap: nowrap;
-    transition: 0.3s ease-in-out;
 
-}
 /* Tech Stack Section */
 .tech-stack {
   padding: 60px 20px;
@@ -126,16 +102,7 @@ body {
   filter: drop-shadow(0 0 8px var(--main-color));
 }
 
-.container {
-    position: fixed;   /* stays in place as background */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;       /* pushes it behind all content */
-    overflow: hidden;
-}
-
+/*Home Content*/
 .home {
     position: relative;
     z-index: 1;        /* ensures your text/images appear above background */
@@ -313,11 +280,6 @@ select{/*DROPDOWN MENUS*/
   display: flex;
   align-items: center;
 }
-.navbar a.tech-stack-link {
-  white-space: nowrap;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-}
-
 
 .navbar li {
   list-style: none;
@@ -325,7 +287,7 @@ select{/*DROPDOWN MENUS*/
 
 .navbar a {
   font-size: 1.9rem;
-  color: var(--bg-color);
+  color: rgb(16, 190, 36); /* changed from red to white */
   margin-left: 4rem;
   font-weight: 700;
   transition: 0.3s ease;
@@ -333,13 +295,13 @@ select{/*DROPDOWN MENUS*/
 
 .navbar a:hover,
 .navbar a.active {
-  color: var(--text-color);
+  color:white; /* keep your variable for hover/active */
 }
 
 /* Mobile menu icon */
 #menu-icon {
   font-size: 3.6rem;
-  color: var(--bg-color);
+  color: rgb(243, 239, 239); /* changed from var(--bg-color) to white */
   cursor: pointer;
   display: none; /* hidden on desktop */
 }
@@ -351,7 +313,7 @@ select{/*DROPDOWN MENUS*/
     top: 100%;
     left: -100%; /* hidden off-screen */
     width: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.598);
     flex-direction: column;
     text-align: center;
     transition: 0.3s ease;
@@ -366,6 +328,7 @@ select{/*DROPDOWN MENUS*/
   .navbar a {
     font-size: 2rem;
     margin: 0;
+    color: rgb(243, 240, 240); /* ensure mobile links are also white */
   }
 
   #menu-icon {
@@ -377,9 +340,7 @@ select{/*DROPDOWN MENUS*/
   }
 }
 
- /*Header Section End*/
- /*Home Content*/   
-
+/*Header Section End*/
 /* Home Content */
 .home-content {
     margin-left: 5rem;
@@ -466,6 +427,8 @@ span {
 
 /*About Section Start*/
 .about{
+  margin: 100px 0;
+  padding: 40px 9%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -478,7 +441,7 @@ span {
     transition: 0.3s ease;
 }
 .about.about-content{
-    max-width: 600px;
+    max-width: 100px;
     color: var(--text-color);
 }
 .about-content h2 {
@@ -494,21 +457,30 @@ span {
 }
 .about-content h2 {
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 200px;
     font-weight: bold;
     color: var(--text-color);
 }
-.certificates-item p {
-  font-size: 1.2rem;   /* increase font size */
-  font-weight: 600;
-  color: var(--text-color);
-  margin: 8px 0;
+.about-content h2 span {
+    color: var(--main-color);
 }
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+/* Certificates Section */
 .certificates-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+}
+/* Certificates section spacing */
+.certificates {
+  background-color: #000;
+  margin-top: 80px;   /* pushes section down from navbar */
+  padding-top: 40px;   /* optional: adds breathing room inside */
 }
 
 /* Default: two certificates per row */
@@ -520,60 +492,115 @@ span {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   text-align: center;
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Certificate image styling */
 .certificates-item img {
-  width: 500px;   /* make image bigger */
-  height: auto;   /* keep aspect ratio */
-  object-fit: contain;
+  width: 100%;          
+  height: auto;         /* keep aspect ratio */
+  object-fit: contain;  /* prevent distortion */
   margin-bottom: 15px;
   transition: transform 0.3s ease;
+  max-width: 600px;     
+}
+
+
+/* Text styling */
+.certificates-item p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(15, 1, 1);
+  margin: 8px 0;
+}
+
+.certificates-item p a {
+  font-size: 1rem;
+  color: red;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.certificates-item p a:hover {
+  background: #333; /* darker hover */
+  color: #6ccd5b;      /* ensure contrast */
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 /* Hover effects */
 .certificates-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px var(--main-color);
+  box-shadow: 0 8px 20px var(--snd-bg-color);
 }
 
 .certificates-item:hover img {
   transform: scale(1.1);
-  filter: drop-shadow(0 0 8px var(--main-color));
-}
-
-.certificates-item p a {
-  background: var(--main-color);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.certificates-item p a:hover {
-  background: #333; /* darker hover */
-}
-
+  filter: drop-shadow(0 0 8px var(--main-color));}
 
 /* Heading */
 .certificates .heading {
   font-size: 3rem;
   margin-bottom: 40px;
   font-weight: bold;
-  color: var(--text-color);
+  color: white;
   text-align: center;
 }
 
 .certificates .heading span {
   color: var(--main-color);
 }
+/* Enlarged image modal */
+.certificate-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.certificate-modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.certificate-modal .close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+#modalCaption {
+  color: #fff;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
 
 /* Responsive: one certificate per row on mobile */
 @media (max-width: 768px) {
   .certificates-item {
-    width: 90%; /* occupy left and right sides */
+    width: 95%;   /* occupy left and right sides */
     margin: 0 auto;
+  }
+  .certificates-item img {
+    width: 100%;  /* scale image to container */
+    max-width: 100%; /* allow full width on mobile */
   }
 }

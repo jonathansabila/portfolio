@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--use of this. mag DL lang tayo ng icon tapos ito gagamitin natin-->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Google Fonts -->
+    <title>Jonathan Sabila - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-    <header class="header">
+  <header class="header">
   <a href="index.html" class="logo">Jonathan Sabila ®</a>
   <i class='bx bx-menu' id="menu-icon"></i>
   <ul class="navbar">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="tech-stack.html">Tech-Stack</a></li>
-    <li><a href="certification.html" class="active">Certificate</a></li>
+    <li><a href="tech-stack.html" class="tech-stack-link">Tech-Stack</a></li>
+    <li><a href="certification.html">Certificate</a></li>
   </ul>
 </header>
+ 
+
 <body>
-        <script src="script.js"></script>
-        <!--Colorfull BG animation Section Start-->
+  
+    <script src="script.js"></script>
     <div class="container">
         <div></div>
         <div></div>
@@ -30,65 +31,54 @@
         <div></div>
         <div></div>
     </div>
-       <script>
+  <script>
   let menuIcon = document.querySelector('#menu-icon');
   let navbar = document.querySelector('.navbar');
-
   menuIcon.onclick = () => {
     navbar.classList.toggle('active');
   };
 </script>
- 
-
-<!--Certificate Section Start-->
 <section class="certificates" id="certificates">
-  <h2 class="heading">My <span>Certificates</span></h2>
   <div class="certificates-container">
-    
+
     <!-- Certificate Item -->
     <div class="certificates-item">
       <img src="Asset/JonathanSabila-IntroductionModernDBS.Certification.png" 
-           alt="Certificate Introduction to Modern Databases"
-           onclick="openModal('Asset/JonathanSabila-IntroductionModernDBS.Certification.png')">
+           alt="Certificate Introduction to Modern Databases">
       <p>Modern Databases - Saylor</p>
       <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener">Verify</a></p>
     </div>
 
     <div class="certificates-item">
       <img src="Asset/JonathanSabila-PythonEssential.Certification.png" 
-           alt="Certificate Python Essential"
-           onclick="openModal('Asset/JonathanSabila-PythonEssential.Certification.png')">
+           alt="Certificate Python Essential">
       <p>Python Essential Training - Cisco Academy</p>
       <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener noreferrer">Verify</a></p>
     </div>
 
     <div class="certificates-item">
       <img src="Asset/JonathanSabila-NetworkingBasic.Certification.png" 
-           alt="Certificate Networking Basics"
-           onclick="openModal('Asset/JonathanSabila-NetworkingBasic.Certification.png')">
+           alt="Certificate Networking Basics">
       <p>Networking Basics - Cisco Academy</p>
       <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener noreferrer">Verify</a></p>
     </div>
 
     <div class="certificates-item">
       <img src="Asset/JonathanSabila-SoftwareEngineering.Certification.png" 
-           alt="Certificate Software Engineering"
-           onclick="openModal('Asset/JonathanSabila-SoftwareEngineering.Certification.png')">
+           alt="Certificate Software Engineering">
       <p>Software Engineering - Saylor</p>
-     <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" 
-      target="_blank" rel="noopener noreferrer">Verify</a></p>
-
+      <p><a href="http://learn.saylor.org/admin/tool/certificate/index.php" target="_blank" rel="noopener noreferrer">Verify</a></p>
     </div>
+
   </div>
 </section>
 
-<!-- Modal -->
-<div id="certModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg" alt="Certificate Image">
-</div>
+<!-- Single Modal -->
+<div class="certificate-modal" id="certificateModal">
+  <span class="close" id="closeModal">&times;</span>
+  <img id="modalImage" src="" alt="Certificate">
+  <p id="modalCaption"></p> <!-- optional caption -->
+ </div>
 
-
-
-</body>
+ </body>
 </html>
