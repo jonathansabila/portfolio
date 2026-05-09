@@ -22,3 +22,19 @@ document.addEventListener("keydown", function(event) {
     closeModal();
   }
 });
+
+function openModal(imageSrc) {
+  document.getElementById('modalImg').src = imageSrc;
+  document.getElementById('certModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('certModal').style.display = 'none';
+}
+
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {}
+  }
+}
