@@ -10,16 +10,14 @@
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   list-style: none;
-}
-
-/* Ensure full viewport coverage */
+} 
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;   /* stops horizontal gaps */
+  overflow-x: hidden;  
 }
 
-/* Background container fix */
+
 .container {
   position: fixed;
   top: 0;
@@ -30,63 +28,62 @@ html, body {
   overflow: hidden;
 }
 
-/* Body background */
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  background-size: cover;       /* fills all sides */
-  background-position: center;  /* keeps centered */
-}
-
-
 /* Tech Stack Section */
 .tech-stack {
-  padding: 60px 20px;
-  background: var(--second-bg-color); /* same background as your site */
-  color: var(--text-color);           /* consistent text color */
+  padding: 120px 20px 60px;   /* extra top padding so heading clears navbar */
+  background: var(--second-bg-color);
+  color: var(--text-color);
   text-align: center;
+
+  /* Centering on screen */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* start from top, not center */
+  align-items: center;
 }
 
-.tech-stack  .heading {
-  font-size: 2.5rem;
+/* Heading */
+.tech-stack .heading {
+  font-size: 3rem;
   margin-bottom: 40px;
   font-weight: bold;
-  color: var(--text-color);
+  color: white;
 }
 
 .tech-stack .heading span {
-  color: var(--main-color); /* accent matches your theme */
+  color: white;
 }
 
 /* Container layout */
 .stack-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;               /* switch to grid for easy 2x4 */
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 40px;                   /* bigger spacing */
+  justify-items: center;
 }
 
 /* Each stack item */
 .stack-item {
-  background: var(--bg-color); /* same card background as other sections */
+  background: var(--bg-color);
   border-radius: 12px;
-  padding: 20px;
-  width: 140px;
+  padding: 30px;               /* bigger padding */
+  width: 180px;                /* larger card */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .stack-item img {
-  width: 80px;
-  height: 80px;
+  width: 100px;                /* bigger logo */
+  height: 100px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
 
 .stack-item p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.4rem;           /* bigger text */
   font-weight: 600;
   color: var(--text-color);
 }
@@ -102,38 +99,74 @@ body {
   filter: drop-shadow(0 0 8px var(--main-color));
 }
 
+
+/* Responsive: stack into 2 columns on tablets */
+@media (max-width: 992px) {
+  .stack-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: stack into 1 column on small mobile */
+@media (max-width: 576px) {
+  .stack-container {
+    grid-template-columns: 1fr; /* single column */
+    gap: 20px;                  /* tighter spacing */
+  }
+
+  .stack-item {
+    width: 100%;                /* full width cards */
+    max-width: 320px;           /* prevent overly wide cards */
+  }
+
+  .stack-item img {
+    width: 80px;                /* slightly smaller logos */
+    height: 80px;
+  }
+
+  .stack-item p {
+    font-size: 1.2rem;          /* adjust text size */
+  }
+}
+
 /*Home Content*/
+/* Home Section */
 .home {
     position: relative;
-    z-index: 1;        /* ensures your text/images appear above background */
-    min-height: 80vh; /* full screen height */
-    padding: 6rem 9% 2rem;
-    justify-content: center;
+    z-index: 1;              /* keeps content above background */
+    min-height: 80vh;        /* fills most of the screen */
+    padding: 6rem 9% 2rem;   /* spacing around content */
     display: flex;
-    align-items: center;  
+    flex-direction: column;  /* stack content vertically */
+    align-items: center;     /* center horizontally */
+    justify-content: flex-start; /* align to top */
+    margin-top: 100px;       /* push down below navbar (adjust to navbar height) */
 }
-.home-img img   {
-    border-radius: 50%;
+
+/* Home Image */
+.home-img {
+    display: flex;
+    justify-content: center; /* center image horizontally */
+    width: 100%;
+}
+
+.home-img img {
+    border-radius: 50%;      /* circle shape */
     width: 20vw;
     height: 20vw;
-
-    justify-content: center;/*search lang how to move my image to the left */
-}
-.home-img img   {
-    border-radius: 80%;
-    width: 20vw;
-
     box-shadow: 0 0 20px var(--main-color);
     cursor: pointer;
     animation: floatImage 4s ease-in-out infinite;
     transition: 0.3s ease;
 }
-.home-img img:hover{
+
+.home-img img:hover {
     transform: translateY(-20px);
     box-shadow: 0 0 30px var(--main-color),
                 0 0 40px var(--main-color), 
-                0 0 50px var(--main-color); 
+                0 0 50px var(--main-color);
 }
+
 @keyframes floatImage {
     0%{
         transform: translateY(0);
@@ -369,7 +402,7 @@ span {
 
 .home-content p {
     font-size: clamp(1rem, 2vw, 1.9rem); /* scales with viewport */
-    color: #a6c0bc;
+    color: #e9f2f1;
 }
 
 /* Media Queries for smaller screens */
@@ -384,8 +417,19 @@ span {
         line-height: 1.2;
     }
 }
+/* Social Media Section */
+.social-media {
+    position: fixed;       /* sticks to screen */
+    bottom: 2rem;          /* distance from bottom */
+    left: 50%;             /* center horizontally */
+    transform: translateX(-50%); /* perfect centering */
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;           /* spacing between icons */
+    z-index: 1000;         /* stays above other elements */
+}
 
-.social-media a{
+.social-media a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -396,79 +440,74 @@ span {
     border-radius: 50%;
     font-size: 3rem;
     color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
 }
-.social-media a:hover{
-    transform: scale(1.2) translateY(-10px);/*Independent Transform Control  when hovering that transform/transition*/
+
+.social-media a:hover {
+    transform: scale(1.2) translateY(-10px);
     background-color: var(--logo-color);
     color: var(--bg-color);
     box-shadow: 0 0 10px var(--main-color),
                 0 0 20px var(--main-color), 
                 0 0 30px var(--main-color);
 }
-.btn {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background-color: var(--main-color);
-    border-radius: 4rem; 
-    box-shadow: none;
-    font-size: 1.6rem;
-    color: var(--logo-color);
-    letter-spacing: 0.1rem;
-    font-weight: 600;
-    transition: 0.3s ease;
-    
-}
-.btn:hover{ /*hover function again for more effect*/
-       box-shadow: 0 0 1.6rem var(--snd-bg-color);
-}
 
-
-/*About Section Start*/
-.about{
+/* About Section */
+.about {
   margin: 100px 0;
   padding: 40px 9%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;  
+  display: flex;
+  align-items: flex-start;   /* align items to the top */
+  justify-content: flex-start; /* push content to the left */
+  gap: 2rem;  
 }
-.about-img img{
-    width: 30vw;
-    border-radius: 80%;
-    box-shadow: 0 0 20px var(--main-color);
-    transition: 0.3s ease;
-}
-.about.about-content{
-    max-width: 100px;
-    color: var(--text-color);
-}
-.about-content h2 {
-    font-size: 10 rem;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: var(--text-color);
+
+.about-img img {
+  width: 30vw;
+  border-radius: 80%;
+  box-shadow: 0 0 20px var(--main-color);
+  transition: 0.3s ease;
 }
 
 .about-content {
-    max-width: 600px;
-    color: var(--text-color);
+  flex: 1;              /* allow content to expand full width */
+  max-width: 100%;      /* remove narrow limit */
+  color: #fff;          /* white text */
+  text-align: left;     /* align text to the left */
 }
+
+/* Headings */
 .about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 200px;
-    font-weight: bold;
-    color: var(--text-color);
+  flex-wrap: wrap;      /* allow wrapping on smaller screens */
+  font-size: 10rem;     /* big font */
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #fff;
 }
+
 .about-content h2 span {
-    color: var(--main-color);
+  color: var(--main-color);
 }
+
+.about-content h3 {
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  font-weight: 1000;
+  color: #fff;
+  width: 100%;          /* stretch full width */
+  text-align: left;
+}
+
+/* Paragraph */
 .about-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-color);
+  font-size: 2rem;      /* big but readable */
+  line-height: 1.8;
+  color: #f5f5f5;
+  width: 100%;          /* stretch across container */
+  text-align: justify;  /* fills left to right nicely */
 }
+
+
 /* Certificates Section */
 .certificates-container {
   display: flex;
