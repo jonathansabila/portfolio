@@ -479,7 +479,7 @@ span {
 /* Headings */
 .about-content h2 {
   flex-wrap: wrap;      /* allow wrapping on smaller screens */
-  font-size: 10rem;     /* big font */
+  font-size: 9rem;     /* big font */
   margin-bottom: 2rem;
   font-weight: bold;
   color: #fff;
