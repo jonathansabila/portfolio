@@ -110,8 +110,8 @@ html, body {
 /* Responsive: stack into 1 column on small mobile */
 @media (max-width: 576px) {
   .stack-container {
-    grid-template-columns: 1fr; /* single column */
-    gap: 20px;                  /* tighter spacing */
+    grid-template-columns: 1fr; 
+    gap: 20px;                  
   }
 
   .stack-item {
@@ -127,11 +127,9 @@ html, body {
   .stack-item p {
     font-size: 1.2rem;          /* adjust text size */
   }
-}
-
-/*Home Content*/
+ }
 /* Home Section */
-.home {
+.home { 
     position: relative;
     z-index: 1;              /* keeps content above background */
     min-height: 80vh;        /* fills most of the screen */
@@ -336,7 +334,7 @@ select{/*DROPDOWN MENUS*/
   font-size: 3.6rem;
   color: rgb(243, 239, 239); /* changed from var(--bg-color) to white */
   cursor: pointer;
-  display: none; /* hidden on desktop */
+  display: none; 
 }
 
 /* Responsive navbar */
@@ -381,12 +379,12 @@ select{/*DROPDOWN MENUS*/
 
 .home-content h3 {
     font-size: clamp(2rem, 5vw, 7rem); /* scales with viewport */
-    font-weight: 700;
+    font-weight: 500;
     color: #ebd966;
 }
 
 .home-content h3:nth-of-type(2) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 span {
@@ -402,7 +400,8 @@ span {
 
 .home-content p {
     font-size: clamp(1rem, 2vw, 1.9rem); /* scales with viewport */
-    color: #e9f2f1;
+    color: white;
+    margin-top: 1.5rem;
 }
 
 /* Media Queries for smaller screens */
@@ -457,8 +456,8 @@ span {
   margin: 100px 0;
   padding: 40px 9%;
   display: flex;
-  align-items: flex-start;   /* align items to the top */
-  justify-content: flex-start; /* push content to the left */
+  align-items: flex-start;   
+  justify-content: flex-start; 
   gap: 2rem;  
 }
 
@@ -494,17 +493,17 @@ span {
   margin-bottom: 2rem;
   font-weight: 1000;
   color: #fff;
-  width: 100%;          /* stretch full width */
+  width: 100%;         
   text-align: left;
 }
 
 /* Paragraph */
 .about-content p {
-  font-size: 2rem;      /* big but readable */
+  font-size: 2rem;      
   line-height: 1.8;
   color: #f5f5f5;
-  width: 100%;          /* stretch across container */
-  text-align: justify;  /* fills left to right nicely */
+  width: 100%;         
+  text-align: justify;  
 }
 
 
@@ -518,9 +517,8 @@ span {
 /* Certificates section spacing */
 .certificates {
   background-color: #000;
-  margin-top: 80px;   /* pushes section down from navbar */
-  padding-top: 40px;   /* optional: adds breathing room inside */
-}
+  margin-top: 80px;   
+  padding-top: 40px;   }
 
 /* Default: two certificates per row */
 .certificates-item {
@@ -562,8 +560,8 @@ span {
 }
 
 .certificates-item p a:hover {
-  background: #333; /* darker hover */
-  color: #6ccd5b;      /* ensure contrast */
+  background: #333; 
+  color: #6ccd5b;      
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -590,9 +588,9 @@ span {
 .certificates .heading span {
   color: var(--main-color);
 }
-/* Enlarged image modal */
+
 .certificate-modal {
-  display: none; /* hidden by default */
+  display: none; 
   position: fixed;
   z-index: 9999;
   left: 0; top: 0;
@@ -632,14 +630,14 @@ span {
   text-align: center;
 }
 
-/* Responsive: one certificate per row on mobile */
+
 @media (max-width: 768px) {
   .certificates-item {
-    width: 95%;   /* occupy left and right sides */
+    width: 95%;   
     margin: 0 auto;
   }
   .certificates-item img {
-    width: 100%;  /* scale image to container */
-    max-width: 100%; /* allow full width on mobile */
+    width: 100%;  
+    max-width: 100%;
   }
 }
