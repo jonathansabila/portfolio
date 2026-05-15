@@ -1,5 +1,6 @@
-/* Toggle menu open/close */
+
 let menuIcon = document.querySelector('#menu-icon');
+
 let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () => {
@@ -12,23 +13,29 @@ const modalImg = document.getElementById("modalImage");
 const modalCaption = document.getElementById("modalCaption");
 const closeBtn = document.getElementById("closeModal");
 
-// Attach click event to all certificate images
+// Open modal
 document.querySelectorAll(".certificates-item img").forEach(img => {
   img.addEventListener("click", () => {
-    modal.style.display = "flex";   // show modal
-    modalImg.src = img.src;         // set image
-    modalCaption.textContent = img.alt; // caption from alt text
+    modal.classList.add("show");
+    modalImg.src = img.src;
+    modalCaption.textContent = img.alt;
+    modalImg.style.transform = "scale(1)"; // reset zoom
   });
 });
 
 let zoomed = false;
 
-modalImg.addEventListener("click", () => {
-  if (!zoomed) {
-    modalImg.style.transform = "scale(1.5)";
-    zoomed = true;
-  } else {
-    modalImg.style.transform = "scale(1)";
-    zoomed = false;
+
+// Close when clicking outside image
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+  }
+});
+
+// ESC key support
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modal.classList.remove("show");
   }
 });

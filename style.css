@@ -276,7 +276,6 @@ select{/*DROPDOWN MENUS*/
   justify-content: space-between;
   width: 90%;
   background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
   padding: 0.5rem 2rem;
   border-radius: 3rem;
   z-index: 1000;
@@ -294,8 +293,8 @@ select{/*DROPDOWN MENUS*/
 .logo:hover {
   transform: scale(1.2);
   background: linear-gradient(to right, #fcf9fb, #071715, #f9f9fa, #032703, #dee5e4, #050f03);
-  background-clip: text;
-  -webkit-background-clip: text;
+ -webkit-background-clip: text;
+   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: animate-gradient 2.5s linear infinite;
 }
@@ -399,9 +398,9 @@ span {
 }
 
 .home-content p {
-    font-size: clamp(1rem, 2vw, 1.9rem); /* scales with viewport */
+       font-size: clamp(2rem, 2vw, 1.9rem);
     color: white;
-    margin-top: 1.5rem;
+    margin-top: 3.5rem;
 }
 
 /* Media Queries for smaller screens */
@@ -416,41 +415,7 @@ span {
         line-height: 1.2;
     }
 }
-/* Social Media Section */
-.social-media {
-    position: fixed;       /* sticks to screen */
-    bottom: 2rem;          /* distance from bottom */
-    left: 50%;             /* center horizontally */
-    transform: translateX(-50%); /* perfect centering */
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;           /* spacing between icons */
-    z-index: 1000;         /* stays above other elements */
-}
-
-.social-media a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: 0.2rem solid var(--main-color);
-    border-radius: 50%;
-    font-size: 3rem;
-    color: var(--main-color);
-    transition: 0.3s ease;
-}
-
-.social-media a:hover {
-    transform: scale(1.2) translateY(-10px);
-    background-color: var(--logo-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 10px var(--main-color),
-                0 0 20px var(--main-color), 
-                0 0 30px var(--main-color);
-}
-
+ 
 /* About Section */
 .about {
   margin: 100px 0;
@@ -507,25 +472,27 @@ span {
 }
 
 
-/* Certificates Section */
+/* Certificates container */
 .certificates-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
+
 /* Certificates section spacing */
 .certificates {
   background-color: #000;
-  margin-top: 80px;   
-  padding-top: 40px;   }
+  margin-top: 80px;
+  padding-top: 40px;
+}
 
 /* Default: two certificates per row */
 .certificates-item {
   background: var(--bg-color);
   border-radius: 12px;
   padding: 20px;
-  width: calc(50% - 30px); /* two per row with gap */
+  width: calc(50% - 30px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   text-align: center;
@@ -535,38 +502,14 @@ span {
 
 /* Certificate image styling */
 .certificates-item img {
-  width: 100%;          
-  height: auto;         /* keep aspect ratio */
-  object-fit: contain;  /* prevent distortion */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
-  max-width: 600px;     
+  max-width: 600px;
 }
-
-
-/* Text styling */
-.certificates-item p {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: rgb(15, 1, 1);
-  margin: 8px 0;
-}
-
-.certificates-item p a {
-  font-size: 1rem;
-  color: red;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.certificates-item p a:hover {
-  background: #333; 
-  color: #6ccd5b;      
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-/* Hover effects */
+ /* Hover effects */
 .certificates-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px var(--snd-bg-color);
@@ -574,54 +517,45 @@ span {
 
 .certificates-item:hover img {
   transform: scale(1.1);
-  filter: drop-shadow(0 0 8px var(--main-color));}
-
-/* Heading */
-.certificates .heading {
-  font-size: 3rem;
-  margin-bottom: 40px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
+  filter: drop-shadow(0 0 8px var(--main-color));
 }
 
-.certificates .heading span {
-  color: var(--main-color);
-}
-
-.certificate-modal {
-  display: none; 
+/* Modal overlay */
+#certificateModal {
+  display: none; /* hidden by default */
   position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 9999;
 }
 
-.certificate-modal img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  animation: zoomIn 0.4s ease;
+/* Show modal */
+#certificateModal.show {
+  display: flex;
 }
 
-@keyframes zoomIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+/* Modal image */
+#modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  transition: transform 0.3s ease-in-out;
+  cursor: zoom-in;
 }
 
-.certificate-modal .close {
+/* Close button */
+#closeModal {
   position: absolute;
-  top: 20px; right: 30px;
+  top: 20px;
+  right: 30px;
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
 }
 
+/* Caption */
 #modalCaption {
   color: #fff;
   margin-top: 15px;
@@ -630,14 +564,142 @@ span {
   text-align: center;
 }
 
-
+/* Responsive: one certificate per row on mobile */
 @media (max-width: 768px) {
   .certificates-item {
-    width: 95%;   
+    width: 95%;
     margin: 0 auto;
   }
   .certificates-item img {
-    width: 100%;  
+    width: 100%;
     max-width: 100%;
+  }
+}
+.footer {
+  position: fixed;          /* stays in place on all screens */
+  bottom: 0;                /* anchored to bottom */
+  right: 0;                 /* anchored to right */
+  background-color: #111;   /* dark background */
+  color: #fff;              /* white text */
+  padding: 10px 15px;
+  border-top-left-radius: 12px; /* rounded corner for style */
+  z-index: 1000;            /* stays above other elements */
+  text-align: right;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+/* Footer text */
+.footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Social icons inside footer */
+.footer .social-media {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 5px;
+}
+
+.footer .social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--main-color);
+  transition: 0.3s ease;
+}
+
+.footer .social-media a:hover {
+  transform: scale(1.2);
+  background-color: var(--logo-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 10px var(--main-color),
+              0 0 20px var(--main-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    width: 100%;             /* full width on mobile */
+    right: 0;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .footer .social-media {
+    justify-content: center; /* center icons on mobile */
+    gap: 0.8rem;
+  }
+
+  .footer .social-media a {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Social Media Section */
+.social-media {
+  position: relative;       /* no longer fixed */
+  bottom: auto;
+  left: auto;
+  transform: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;         /* pushes icons lower */
+  margin-bottom: 1rem;      /* spacing above footer */
+  flex-direction: column; /* stacks paragraph above icons */
+  align-items: center;    /* centers everything horizontally */
+
+}
+
+.social-media p {
+  color:  #ebd966;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+
+}
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--main-color);
+  transition: 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.2) translateY(-5px);
+  background-color: var(--logo-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 10px var(--main-color),
+              0 0 20px var(--main-color),
+              0 0 30px var(--main-color);
+}
+
+/* Responsive tweak for mobile */
+@media (max-width: 768px) {
+  .social-media {
+    margin-top: 3rem; /* lower on mobile */
+    gap: 1rem;
+  }
+  .social-media a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
   }
 }
